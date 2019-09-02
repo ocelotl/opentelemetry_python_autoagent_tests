@@ -1,0 +1,6 @@
+flake8
+pep8-naming
+pytest
+ipdb
+-e git+git@github.com:ocelotl/opentelemetry_python_autoagent.git@alpha#egg=opentelemetry_python_autoagent
+-e git+git@github.com:ocelotl/opentelemetry_python_autoagent_flask.git@alpha#egg=opentelemetry_python_autoagent_flask

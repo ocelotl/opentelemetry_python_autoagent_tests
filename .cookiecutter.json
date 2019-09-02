@@ -1,0 +1,11 @@
+{
+    "author": "Diego Hurtado",
+    "email": "diego.hurtado@toptal.com",
+    "repo_name": "opentelemetry_python_autoagent_tests",
+    "repo_url": "https://github.com/ocelotl/opentelemetry_python_autoagent_tests",
+    "doc_url": "https://github.com/ocelotl/opentelemetry_python_autoagent_tests/tree/master/doc",
+    "project_name": "opentelemetry_python_autoagent_tests",
+    "short_description": "Tests for the OpenTelemetry Automatic Instrumentation Agent",
+    "year": "2019",
+    "version": "0.1.0"
+}

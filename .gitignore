@@ -1,0 +1,15 @@
+*.py[cod]
+__pycache__
+
+# Sphinx
+doc/_build/*
+doc/opentelemetry_python_autoagent_tests/*
+doc/autoapi/*
+
+# Tox
+.tox/*
+.cache/*
+.coverage
+
+# Misc
+*~
