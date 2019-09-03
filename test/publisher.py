@@ -20,5 +20,8 @@ def publish():
         return 'published'
 
 
+print(__name__)
+
+
 if __name__ == "__main__":
     app.run(port=8082)
