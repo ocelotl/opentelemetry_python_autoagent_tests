@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-from lib.tracing import init_tracer
+from tracing import init_tracer
 from opentracing.ext import tags
 from opentracing.propagation import Format
 
