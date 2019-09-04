@@ -12,15 +12,14 @@ tracer = init_tracer('publisher')
 def publish():
     span_ctx = tracer.extract(Format.HTTP_HEADERS, request.headers)
     span_tags = {tags.SPAN_KIND: tags.SPAN_KIND_RPC_SERVER}
+    from ipdb import set_trace
+    set_trace()
     with tracer.start_active_span(
         'publish', child_of=span_ctx, tags=span_tags
     ):
         hello_str = request.args.get('helloStr')
         print(hello_str)
         return 'published'
-
-
-print(__name__)
 
 
 if __name__ == "__main__":

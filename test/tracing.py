@@ -19,4 +19,5 @@ def init_tracer(service):
     )
 
     # this call also sets opentracing.tracer
+
     return config.initialize_tracer()
