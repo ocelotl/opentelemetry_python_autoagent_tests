@@ -1,23 +1,23 @@
 from flask import Flask, request
-from opentelemetry.trace import set_preferred_tracer_implementation
-from opentelemetry.trace import tracer
-from opentelemetry.sdk.trace import Tracer
+
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerSource
+# from opentelemetry.context.propagation.tracecontexthttptextformat import (
+#     TraceContextHTTPTextFormat
+# )
 from opentelemetry.sdk.trace.export import ConsoleSpanExporter
 from opentelemetry.sdk.trace.export import SimpleExportSpanProcessor
-from opentelemetry.context.propagation.tracecontexthttptextformat import (
-    TraceContextHTTPTextFormat
-)
-from opentelemetry.propagators import set_global_httptextformat
+# from opentelemetry.propagators import set_global_httptextformat
 
 app = Flask(__name__)
 
-set_preferred_tracer_implementation(lambda T: Tracer())
-tracer = tracer()
+trace.set_preferred_tracer_source_implementation(lambda T: TracerSource())
+# tracer = trace.tracer_source().get_tracer(__name__)
 
-tracer.add_span_processor(
+trace.tracer_source().add_span_processor(
     SimpleExportSpanProcessor(ConsoleSpanExporter())
 )
-set_global_httptextformat(TraceContextHTTPTextFormat)
+# set_global_httptextformat(TraceContextHTTPTextFormat)
 
 
 @app.route("/publish")
