@@ -16,6 +16,7 @@ from opentelemetry.trace import set_preferred_tracer_implementation
 
 app = Flask(__name__)
 
+
 set_preferred_tracer_implementation(lambda T: Tracer())
 tracer = tracer()
 
